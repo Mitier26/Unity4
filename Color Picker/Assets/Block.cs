@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class Block : MonoBehaviour, IPointerDownHandler
+{
+    private Image image;
+    private GameController gameController;
+
+    public Color Color
+    {
+        set => image.color = value;
+        get => image.color;
+    }
+
+    public void Setup(GameController gameController)
+    {
+        image = GetComponent<Image>();
+        this.gameController = gameController;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        gameController.CheckBlock(Color);
+    }
+}
