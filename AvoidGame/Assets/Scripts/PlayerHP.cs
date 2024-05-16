@@ -66,4 +66,14 @@ public class PlayerHP : MonoBehaviour
         spriteRenderer.color = originColor;
         isInvincibility = false;
     }
+
+    public void RecoveryHP()
+    {
+        if(currentHP < imageHP.Length)
+        {
+            soundController.Play(1);
+            imageHP[currentHP].SetActive(true);
+            currentHP++;
+        }
+    }
 }

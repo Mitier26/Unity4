@@ -16,7 +16,7 @@ public class MovementRigidbody2D : MonoBehaviour
     private float highGravity = 3;      // 일반 중력
     [SerializeField]
     private int maxJumpCount = 2;       // 연속 점프 가능 횟수
-    private int currentJumpCount;       // 현재 점프 수
+    private int currentJumpCount = 2;       // 현재 점프 수
 
     [Header("Collision")]
     [SerializeField]
@@ -30,6 +30,7 @@ public class MovementRigidbody2D : MonoBehaviour
     private new Collider2D collider2D;
 
     public bool IsLongJump { set; get; } = false;
+    public float MoveSpeed { set=>moveSpeed = Mathf.Max(0, value); }
 
     private void Awake()
     {

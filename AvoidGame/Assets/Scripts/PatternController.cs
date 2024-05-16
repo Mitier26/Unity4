@@ -6,6 +6,8 @@ public class PatternController : MonoBehaviour
     private GameController gameController;
     [SerializeField]
     private GameObject[] patterns;
+    [SerializeField]
+    private GameObject hpPotion;
     private GameObject currentPattern;
     private int[] patternIndexs;
     private int current = 0;
@@ -53,6 +55,12 @@ public class PatternController : MonoBehaviour
         currentPattern.SetActive (true);
 
         current++;
+
+        // 4, 3, 3개의 패턴늘 클리오하면 물약등장
+        if(current == 4 || current == 7 || current == 10)
+        {
+            hpPotion.SetActive(true);
+        }
 
         if(current >= patternIndexs.Length)
         {
