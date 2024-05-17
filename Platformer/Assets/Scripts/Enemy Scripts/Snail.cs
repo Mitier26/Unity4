@@ -74,6 +74,14 @@ public class Snail : MonoBehaviour
 
                     anim.Play("Stunned");
                     stunned = true;
+
+                    // 벌레 부분은 여기
+                    // 달팽이와는 다르게 공으로 변하지 않는다.
+                    if (gameObject.CompareTag(MyTags.BEETLE_TAG))
+                    {
+                        anim.Play("Stunned");
+                        StartCoroutine(Dead(0.5f));
+                    }
                 }
             }
         }
@@ -88,7 +96,11 @@ public class Snail : MonoBehaviour
                 else
                 {
                     // 달팽이 민다.
-                    myBody.velocity = new Vector2(15f, myBody.velocity.y);
+                    if(!gameObject.CompareTag(MyTags.BEETLE_TAG))
+                    {
+                        myBody.velocity = new Vector2(15f, myBody.velocity.y);
+                        StartCoroutine(Dead(3f));
+                    }
                 }
             }
         }
@@ -103,7 +115,11 @@ public class Snail : MonoBehaviour
                 }
                 else
                 {
-                    myBody.velocity = new Vector2(-15f, myBody.velocity.y);
+                    if (!gameObject.CompareTag(MyTags.BEETLE_TAG))
+                    {
+                        myBody.velocity = new Vector2(-15f, myBody.velocity.y);
+                        StartCoroutine(Dead(3f));
+                    }
                 }
             }
         }
@@ -138,11 +154,10 @@ public class Snail : MonoBehaviour
         transform.localScale = tempScale;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private IEnumerator Dead(float timer)
     {
-        if(collision.gameObject.CompareTag(MyTags.PLAYER_TAG))
-        {
-            anim.Play("Stunned");
-        }
+        yield return new WaitForSeconds(timer);
+        gameObject.SetActive(false);
     }
 }
