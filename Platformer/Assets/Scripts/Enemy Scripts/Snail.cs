@@ -160,4 +160,35 @@ public class Snail : MonoBehaviour
         yield return new WaitForSeconds(timer);
         gameObject.SetActive(false);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag(MyTags.BULLET_TAG))
+        {
+            if(CompareTag(MyTags.BEETLE_TAG))
+            {
+                anim.Play("Stunned");
+
+                canMove = false;
+                myBody.velocity = Vector3.zero;
+
+                StartCoroutine(Dead(0.4f));
+            }
+
+            if(CompareTag(MyTags.SNAIL_TAG))
+            {
+                if (!stunned)
+                {
+                    anim.Play("Stunned");
+                    stunned = true;
+                    canMove = false;
+                    myBody.velocity = Vector3.zero;
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+        }
+    }
 }
