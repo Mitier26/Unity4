@@ -13,6 +13,9 @@ public class Frog : MonoBehaviour
     private int jumpedTimes;
     private bool jumpLeft = true;
 
+    public LayerMask playerLayer;
+    private GameObject player;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -20,7 +23,16 @@ public class Frog : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag(MyTags.PLAYER_TAG);
         StartCoroutine(nameof(FrogJump));
+    }
+
+    private void Update()
+    {
+        if(Physics2D.OverlapCircle(transform.position, 0.5f, playerLayer))
+        {
+            player.GetComponent<PlayerDamage>().DealDamage();
+        }
     }
 
     private void LateUpdate()

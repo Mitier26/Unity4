@@ -92,6 +92,7 @@ public class Snail : MonoBehaviour
                 if (!stunned)
                 {
                     // 플레이어 대미지
+                    leftHit.collider.gameObject.GetComponent<PlayerDamage>().DealDamage();
                 }
                 else
                 {
@@ -111,7 +112,7 @@ public class Snail : MonoBehaviour
             {
                 if (!stunned)
                 {
-
+                    rightHit.collider.gameObject.GetComponent<PlayerDamage>().DealDamage();
                 }
                 else
                 {
