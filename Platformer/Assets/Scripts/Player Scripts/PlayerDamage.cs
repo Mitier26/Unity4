@@ -14,7 +14,7 @@ public class PlayerDamage : MonoBehaviour
     private void Awake()
     {
         lifeText = GameObject.Find("LifeText").GetComponent<Text>();
-        lifeScoreCount = 1;
+        lifeScoreCount = 3;
         lifeText.text = "x" + lifeScoreCount;
 
         canDamage = true;

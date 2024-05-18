@@ -56,7 +56,8 @@ public class fireBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(MyTags.BEETLE_TAG) 
             || collision.gameObject.CompareTag(MyTags.SNAIL_TAG)
-            || collision.gameObject.CompareTag(MyTags.SPIDER_TAG))
+            || collision.gameObject.CompareTag(MyTags.SPIDER_TAG)
+            || collision.gameObject.CompareTag(MyTags.BOSS_TAG))
         {
             anim.Play("Explode");
             canMove = false;
