@@ -54,7 +54,9 @@ public class fireBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(MyTags.BEETLE_TAG) || collision.gameObject.CompareTag(MyTags.SNAIL_TAG))
+        if (collision.gameObject.CompareTag(MyTags.BEETLE_TAG) 
+            || collision.gameObject.CompareTag(MyTags.SNAIL_TAG)
+            || collision.gameObject.CompareTag(MyTags.SPIDER_TAG))
         {
             anim.Play("Explode");
             canMove = false;
