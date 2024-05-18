@@ -3961,6 +3961,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &886421507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886421508}
+  m_Layer: 0
+  m_Name: Collision Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &886421508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886421507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.116, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1590814516}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915428620
 GameObject:
   m_ObjectHideFlags: 0
@@ -7262,6 +7293,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1590814520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590814515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5585a5c8be772409d3b60192c96916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottom_Collision: {fileID: 886421508}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1601413194
 GameObject:
   m_ObjectHideFlags: 0
@@ -9324,6 +9371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snail
       objectReference: {fileID: 0}
+    - target: {fileID: 8846177156573559174, guid: cf92898dec243f24db0dca4ee23276cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9510,6 +9561,10 @@ PrefabInstance:
     - target: {fileID: 9152699370677975382, guid: b75f7e0899c9d2040af463a2ddaf7b55, type: 3}
       propertyPath: m_Name
       value: Frog Parent_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152699370677975382, guid: b75f7e0899c9d2040af463a2ddaf7b55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10240,11 +10295,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5785917400285623042, guid: 906dabfb97d910f4e867e08370104159, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 886421508}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 774351773500483188, guid: 906dabfb97d910f4e867e08370104159, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1590814519}
+    - targetCorrespondingSourceObject: {fileID: 774351773500483188, guid: 906dabfb97d910f4e867e08370104159, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1590814520}
   m_SourcePrefab: {fileID: 100100000, guid: 906dabfb97d910f4e867e08370104159, type: 3}
 --- !u!1001 &8878290780729752214
 PrefabInstance:
