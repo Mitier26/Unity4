@@ -159,10 +159,52 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Tree 1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 204
+        width: 189
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c245e890d6d55f499c7e8fde17f1878
+      internalID: -45859693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 340
+        width: 68
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed268d1e4e492184da63a900b9336a62
+      internalID: 1024044720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 645298933dba1e749863c86293acf401
     internalID: 0
     vertices: []
     indices: 
@@ -171,6 +213,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Tileset_1_0: 21300000
+      Tree 1: -45859693
+      Water: 1024044720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
