@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class GroundBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform otherBlock;
+    public float halfLength = 100f;
+    private Transform player;
+    private float endOffset = 10f;
+
+    private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        MoveGround();
+    }
+
+    private void MoveGround()
+    {
+        if(transform.position.z + halfLength< player.transform.position.z - endOffset)
+        {
+            transform.position = new Vector3(otherBlock.position.x, otherBlock.position.y, otherBlock.position.z + halfLength * 2);
+        }
     }
 }
