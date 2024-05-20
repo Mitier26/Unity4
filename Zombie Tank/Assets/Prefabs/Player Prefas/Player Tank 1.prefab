@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 973511761222398558}
   - component: {fileID: 7232528897871129130}
   - component: {fileID: 374002900803757882}
+  - component: {fileID: 5166484233638204186}
   m_Layer: 0
   m_Name: Player Tank 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +180,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5166484233638204186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739083759055770859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3241956829ab5d42872c26219431dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0, z: 0}
+  x_Speed: 8
+  z_Speed: 15
+  accelerated: 15
+  deccelarated: 10
+  low_Sound_Pitch: 0
+  normal_Sound_Pitch: 0
+  high_Sound_Pitch: 0
+  engine_On_Sound: {fileID: 0}
+  engine_Off_Sound: {fileID: 0}
 --- !u!1001 &497081966619887191
 PrefabInstance:
   m_ObjectHideFlags: 0

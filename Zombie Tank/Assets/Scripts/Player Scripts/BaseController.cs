@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class BaseController : MonoBehaviour
 
     public float accelerated = 15f, deccelarated = 10f;
 
-    protected float ratationSpeed = 10f;
+    protected float rotationSpeed = 10f;
     protected float maxAngle = 10f;
 
     public float low_Sound_Pitch, normal_Sound_Pitch, high_Sound_Pitch;
@@ -31,7 +31,7 @@ public class BaseController : MonoBehaviour
     // 이것이 변하면 멈춘다.
     protected void MoveLeft()
     {
-        speed = new Vector3(-x_Speed/ 2f, 0f, speed.z);
+        speed = new Vector3(-x_Speed / 2f, 0f, speed.z);
     }
 
     protected void MoveRight()
