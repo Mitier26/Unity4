@@ -58,6 +58,8 @@ public class Zombie : MonoBehaviour
 
             Invoke("DeactiveGameObject", 3f);
 
+            GameplayController.instance.IncreaseScore();
+
             Die();
         }
     }
