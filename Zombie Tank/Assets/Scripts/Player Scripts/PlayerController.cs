@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // 기본 이동을 상속 받았다.
 // 오브젝트에 BaseController 스크립트가 없는데 변수가 있다.
@@ -12,16 +13,24 @@ public class PlayerController : BaseController
     public GameObject bullet_Prefab;
     public ParticleSystem shootFX;
 
+    private Animator shootSliderAnim;
+    [HideInInspector]
+    public bool canShoot;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        shootSliderAnim = GameObject.Find("Fire Bar").GetComponent<Animator>();
+
+        GameObject.Find("ShootBtn").GetComponent<Button>().onClick.AddListener(ShootingControl);
+        canShoot = true;
     }
 
     private void Update()
     {
         ControlMovementWithKeyboard();
         ChangeRotation();
-        ShootingControl();
     }
         
 
@@ -90,11 +99,19 @@ public class PlayerController : BaseController
 
     public void ShootingControl()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Time.timeScale != 0)
         {
-            GameObject bullet = Instantiate(bullet_Prefab, bullet_StartPoint.position, Quaternion.identity);
-            bullet.GetComponent<Bullet>().Move(2000f);
-            shootFX.Play();
-        }
+            if (canShoot)
+            {
+                GameObject bullet = Instantiate(bullet_Prefab, bullet_StartPoint.position, Quaternion.identity);
+                bullet.GetComponent<Bullet>().Move(2000f);
+                shootFX.Play();
+
+                canShoot = false;
+
+                shootSliderAnim.Play("Fill");
+            }
+            
+        }    
     }
 }
