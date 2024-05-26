@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    //TODO:
-    //FIXME:
     // 색상을 배열로 등록하고 사용
     // Random.ColorHSV()를 사용
     [SerializeField] private Color[] colorPalette;

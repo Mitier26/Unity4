@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Block : MonoBehaviour, IPointerDownHandler
 {
+    // IPointerDownHandler : UI 에 있는 것을 클릭했을 때 이벤트를 처리하기 위한 것
     private Image image;
     private GameController gameController;
 
