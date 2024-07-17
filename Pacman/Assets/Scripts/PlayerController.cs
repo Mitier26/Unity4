@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection = Vector2.right;
     private Movement2D movement2D;
     private AroundWrap aroundWrap;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         // tileLayer = 1 << LayerMask.NameToLayer("Tile");
         movement2D = GetComponent<Movement2D>();
         aroundWrap = GetComponent<AroundWrap>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -64,5 +66,21 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        else if (collision.CompareTag("Enemy")) 
+        {
+            StopCoroutine(nameof(OnHit));
+            StartCoroutine(nameof(OnHit));
+
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private IEnumerator OnHit()
+    {
+        spriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.color = Color.white;
     }
 }
