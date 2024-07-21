@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown;
     [SerializeField] private GameObject dashEffect;
 
+    bool attack = false;
+    private float temeBtweenAttack, timeSinceAttack;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
