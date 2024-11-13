@@ -1,2 +1,6 @@
-fileFormatVersion: 2
-guid: afba5857e86c71b46a15b6a193e7b0bb
+﻿using UnityEngine;
+
+public class Singleton2 : MonoBehaviour
+{
+    
+}
